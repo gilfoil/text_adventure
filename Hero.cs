@@ -17,10 +17,10 @@ namespace TextAdventure
         private int dexterity;
         private int intelligence;
         private int charisma;
-        private Weapon weapon;
-        private Armor armor;
-        private Wand wand;
-        private Shield shield;
+        private Item.Weapon weapon;
+        private Item.Armor armor;
+        private Item.Wand wand;
+        private Item.Shield shield;
 
         private int coins;
 
@@ -183,7 +183,7 @@ namespace TextAdventure
                     }
                     else
                     {
-                        return ("du hast nicht genug  gold");
+                        // Error Message
                         
                     }
                     break;
@@ -196,19 +196,19 @@ namespace TextAdventure
                     }
                     else
                     {
-                        return ("du hast nicht genug Gold");
+                        // Error Message
                     
                     }
                     break;
                 case "Wand":
                     if(changeBank(upgradesItems[2] * BASE_UPGRADE_COST))
                     {
-                        wand.spelldamage += 20;
+                        wand.spell_damage += 20;
                         upgrades[2] += 1;
                     }
                     else
                     {
-                        return ("du hast nicht genug Gold");
+                        // Error Message
                     }
                     break;
                 case "Shield":
@@ -220,7 +220,7 @@ namespace TextAdventure
                     }
                     else
                     {
-                        return ("du hast nicht genug Gold");
+                        // Error Message 
                     }
                     break;
                 default:

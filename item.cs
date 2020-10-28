@@ -11,27 +11,27 @@ namespace TextAdventure
 
     public class Weapon: Item
         {
-            private int offense = 10;
-            private int hit_chance = 2;
+            public int offense = 10;
+            public int hit_chance = 2;
         }
     public class Armor: Item
     {
-            private int defense = 20;
-            private int dodge_chance = 5;
+            public int defense = 20;
+            public int dodge_chance = 5;
     }
     public class Wand: Item 
     {
-            private int spell_damage = 5; 
+            public int spell_damage = 5; 
     }
 
       public class Shield: Item
       { 
-      private int shield_defense = 5;
-      private int block_chance = 3;
+      public int shield_defense = 5;
+      public int block_chance = 3;
       }
 
     }
-}
+}   
 // Kettenhemd, Lederrüstung, Mithriel, Stahlpanzer, 
 // Großschwert, Streitaxt, Degen, Dolch
 // Werte werden zufällig gerollt und bei bestimmten Werten kommt der Name vom Item raus
