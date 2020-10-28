@@ -21,7 +21,6 @@ namespace TextAdventure
         private Item.Armor armor;
         private Item.Wand wand;
         private Item.Shield shield;
-
         private int coins;
 
         private int[] upgrades;
