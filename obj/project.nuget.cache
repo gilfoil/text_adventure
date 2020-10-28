@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+qZBdzgzs3ey3yomkaJ8Gf3hdGqcN0WA+6FiQyrnmIRkDSdlWL6OY1AvLV3fhds7kpb0WyN2EYOYSMO/OnnVPw==",
+  "dgSpecHash": "PoPXUcPGrdW5VYw7O95zOoZpcISuxx6E43QVJpeYuBeCugnHPIXkL17JrVini79nED4BcnTS5G0icmp6N3+y0A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dozent\\dotnet\\text_adventure\\text_adventure.csproj",
+  "projectFilePath": "G:\\dotnet\\text_adventure\\text_adventure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
