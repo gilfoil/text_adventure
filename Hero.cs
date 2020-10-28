@@ -143,6 +143,7 @@ namespace TextAdventure
                     if(changeBank(upgrades[2] * BASE_UPGRADE_COST))
                     {
                         this.intelligence += 1;
+                        upgrades[2] += 1;
                         upgradesItem[2] += 1;
                     }
                     else
@@ -170,6 +171,7 @@ namespace TextAdventure
             }
             
         }
+      
         public void changeItem(string stat)
         {
                 switch (stat)
