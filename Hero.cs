@@ -143,7 +143,7 @@ namespace TextAdventure
                     if(changeBank(upgrades[2] * BASE_UPGRADE_COST))
                     {
                         this.intelligence += 1;
-                        upgrades[2] += 1;
+                        upgradesItem[2] += 1;
                     }
                     else
                     {
@@ -179,7 +179,7 @@ namespace TextAdventure
                     {
                         weapon.offense += 20;
                         weapon.hit_chance +=5;
-                        upgrades[0] += 1;
+                        upgradesItems[0] += 1;
                     }
                     else
                     {
@@ -192,7 +192,7 @@ namespace TextAdventure
                     {
                          armor.defense += 20;
                          armor.dodge_chance += 5;
-                        upgrades[1] += 1;
+                        upgradesItems[1] += 1;
                     }
                     else
                     {
@@ -204,7 +204,7 @@ namespace TextAdventure
                     if(changeBank(upgradesItems[2] * BASE_UPGRADE_COST))
                     {
                         wand.spell_damage += 20;
-                        upgrades[2] += 1;
+                        upgradesItems[2] += 1;
                     }
                     else
                     {
@@ -216,7 +216,7 @@ namespace TextAdventure
                     {
                         shield.shield_defense += 5;
                         shield.block_chance += 2;
-                        upgrades[3] += 1;
+                        upgradesItems[3] += 1;
                     }
                     else
                     {
