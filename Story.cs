@@ -1,7 +1,7 @@
 using System.IO;
 using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 namespace TextAdventure
 {
     class Story
@@ -10,8 +10,10 @@ namespace TextAdventure
 
         public const char OPTION_DELIM = '&';
 
-        public const char CONSEQUENZE_DELIM = '#';
+        public const char CONSEQUENCE_DELIM = '#';
         private int currentDay;
+
+        private int currentQuest = 0;
 
         private bool isComplete;
 
@@ -50,6 +52,9 @@ namespace TextAdventure
                 }
                 return s;
             }
+
+            public Option getChoosen(int choice) => this.options[choice];
+            
         }
         internal class Option
             {
@@ -64,24 +69,35 @@ namespace TextAdventure
                     this.consequence = consequence;
                 }
 
-            public override string ToString()
-            {
-                return $"{this.text} -> {this.consequence} ({this.param})";
-            }
+                public override string ToString()
+                {
+                    return $"{this.text} -> {this.consequence} ({this.param})";
+                }
 
-            public void setParam(int param)
-            {
-                this.param = param;
-            }
+                public void setParam(int param)
+                {
+                    this.param = param;
+                }
 
-            public int getParam() => this.param;
+                public int getParam() => this.param;
 
+                public string getConsequence() => this.consequence;
             }
         public Story(Hero hero)
         {
             this.hero = hero;
             this.quests = new Dictionary<int, Quest>();
             loadFromFile("test.txt");
+            Console.WriteLine($"Loaded Quests: {this.quests.Count}");
+            /*if(this.quests.Count > 0)
+            {
+                runQuest(this.quests[0]);
+            }
+            else
+            {
+                Console.WriteLine("Failed to load quests :(");
+            }*/
+            //runQuest(this.quests[this.currentQuest]);
             /*foreach (var quest in this.quests)
             {
                 Console.WriteLine(quest);
@@ -93,7 +109,7 @@ namespace TextAdventure
             this.quests[id] = quest;
         }
 
-        private bool loadFromFile(string fPath)
+        private async Task<bool> loadFromFile(string fPath)
         {
             try
             {
@@ -137,7 +153,7 @@ namespace TextAdventure
                                 //Console.WriteLine(keyNotFound);
                                 this.quests[questId] = new Quest(questText);
                             }
-                            string[] optionInfo = line.Split(CONSEQUENZE_DELIM);
+                            string[] optionInfo = line.Split(CONSEQUENCE_DELIM);
                             string optionText = "";
                             if(optionInfo.Length > 1)
                                 {
@@ -171,7 +187,7 @@ namespace TextAdventure
                         }
                          
                     }
-                    return  true;
+                    return true;
                 }
             }
             catch (Exception e)
@@ -181,5 +197,45 @@ namespace TextAdventure
             }
         }
 
+        private void runQuest(Quest q)
+        {
+            /*foreach(var quest in this.quests)
+            {
+                Console.WriteLine(quest);
+                var input = Console.ReadKey();
+
+            }*/
+            Console.WriteLine(q);
+            var input = Console.ReadKey();
+            resolveChoice(q.getChoosen(Convert.ToInt32(input.ToString())));
+        }
+
+        private void resolveChoice(Option option)
+        {
+            switch(option.getConsequence())
+            {
+                case "Goto":
+                    currentQuest = option.getParam() - 1;
+                    runQuest(this.quests[option.getParam() - 1]);
+                    break;
+                case "Encounter":
+                    //NYI
+                    break;
+                case "Hub":
+                    //NYI
+                    break;
+                case "Coins":
+                    //NYI
+                    break;
+                default:
+                    //NYI
+                    break;
+            }
+        }
+
+        public void start()
+        {
+            runQuest(this.quests[this.currentQuest]);
+        }
     }
 }
