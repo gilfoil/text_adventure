@@ -17,10 +17,15 @@ namespace TextAdventure
         private int dexterity;
         private int intelligence;
         private int charisma;
+        private Item.Weapon weapon;
+        private Item.Armor armor;
+        private Item.Wand wand;
+        private Item.Shield shield;
 
         private int coins;
 
         private int[] upgrades;
+        private int[] upgradesItems;
 
         public Hero(string heroName)
         {
@@ -29,6 +34,7 @@ namespace TextAdventure
             setMaxHealth();
             this.currentHealth = this.maxHealth;
             this.upgrades = new int[] {1,1,1,1};
+            this.upgradesItems = new int[] {1,1,1,};
        }
 
         public void rollStats()
@@ -137,7 +143,7 @@ namespace TextAdventure
                     if(changeBank(upgrades[2] * BASE_UPGRADE_COST))
                     {
                         this.intelligence += 1;
-                        upgrades[2] += 1;
+                        upgradesItem[2] += 1;
                     }
                     else
                     {
@@ -164,7 +170,64 @@ namespace TextAdventure
             }
             
         }
-
+        public void changeItem(string stat)
+        {
+                switch (stat)
+                {
+                case "Weapon":
+                    if(changeBank(upgradesItems[0] * BASE_UPGRADE_COST))
+                    {
+                        weapon.offense += 20;
+                        weapon.hit_chance +=5;
+                        upgradesItems[0] += 1;
+                    }
+                    else
+                    {
+                        // Error Message
+                        
+                    }
+                    break;
+                case "Armor":
+                    if(changeBank(upgradesItems[1] * BASE_UPGRADE_COST))
+                    {
+                         armor.defense += 20;
+                         armor.dodge_chance += 5;
+                        upgradesItems[1] += 1;
+                    }
+                    else
+                    {
+                        // Error Message
+                    
+                    }
+                    break;
+                case "Wand":
+                    if(changeBank(upgradesItems[2] * BASE_UPGRADE_COST))
+                    {
+                        wand.spell_damage += 20;
+                        upgradesItems[2] += 1;
+                    }
+                    else
+                    {
+                        // Error Message
+                    }
+                    break;
+                case "Shield":
+                    if(changeBank(upgradesItems[3] * BASE_UPGRADE_COST))
+                    {
+                        shield.shield_defense += 5;
+                        shield.block_chance += 2;
+                        upgradesItems[3] += 1;
+                    }
+                    else
+                    {
+                        // Error Message 
+                    }
+                    break;
+                default:
+                    // Error Message
+                    // Implement me :)
+                    break;
+                }
         
-    }
-}
+        }
+}}
