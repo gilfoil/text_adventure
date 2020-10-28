@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dozent\\dotnet\\text_adventure\\text_adventure.csproj": {}
+    "E:\\C#\\GitHub\\text_adventure\\text_adventure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dozent\\dotnet\\text_adventure\\text_adventure.csproj": {
+    "E:\\C#\\GitHub\\text_adventure\\text_adventure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dozent\\dotnet\\text_adventure\\text_adventure.csproj",
+        "projectUniqueName": "E:\\C#\\GitHub\\text_adventure\\text_adventure.csproj",
         "projectName": "text_adventure",
-        "projectPath": "C:\\Users\\dozent\\dotnet\\text_adventure\\text_adventure.csproj",
-        "packagesPath": "C:\\Users\\dozent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dozent\\dotnet\\text_adventure\\obj\\",
+        "projectPath": "E:\\C#\\GitHub\\text_adventure\\text_adventure.csproj",
+        "packagesPath": "C:\\Users\\USER1.RECHNER6\\.nuget\\packages\\",
+        "outputPath": "E:\\C#\\GitHub\\text_adventure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\dozent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER1.RECHNER6\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

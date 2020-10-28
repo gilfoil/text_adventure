@@ -17,7 +17,6 @@ namespace TextAdventure
         private int dexterity;
         private int intelligence;
         private int charisma;
-
         private int coins;
 
         private int[] upgrades;
