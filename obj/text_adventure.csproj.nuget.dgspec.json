@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#\\GitHub\\text_adventure\\text_adventure.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\Jan\\SpielA\\text_adventure\\text_adventure.csproj": {}
   },
   "projects": {
-    "E:\\C#\\GitHub\\text_adventure\\text_adventure.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\Jan\\SpielA\\text_adventure\\text_adventure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#\\GitHub\\text_adventure\\text_adventure.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Jan\\SpielA\\text_adventure\\text_adventure.csproj",
         "projectName": "text_adventure",
-        "projectPath": "E:\\C#\\GitHub\\text_adventure\\text_adventure.csproj",
-        "packagesPath": "C:\\Users\\USER1.RECHNER6\\.nuget\\packages\\",
-        "outputPath": "E:\\C#\\GitHub\\text_adventure\\obj\\",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\Jan\\SpielA\\text_adventure\\text_adventure.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\Jan\\SpielA\\text_adventure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER1.RECHNER6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
