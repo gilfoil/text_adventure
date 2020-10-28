@@ -17,10 +17,15 @@ namespace TextAdventure
         private int dexterity;
         private int intelligence;
         private int charisma;
+        private Weapon weapon;
+        private Armor armor;
+        private Wand wand;
+        private Shield shield;
 
         private int coins;
 
         private int[] upgrades;
+        private int[] upgradesItems;
 
         public Hero(string heroName)
         {
@@ -29,6 +34,7 @@ namespace TextAdventure
             setMaxHealth();
             this.currentHealth = this.maxHealth;
             this.upgrades = new int[] {1,1,1,1};
+            this.upgradesItems = new int[] {1,1,1,};
        }
 
         public void rollStats()
@@ -164,7 +170,64 @@ namespace TextAdventure
             }
             
         }
-
+        public void changeItem(string stat)
+        {
+                switch (stat)
+                {
+                case "Weapon":
+                    if(changeBank(upgradesItems[0] * BASE_UPGRADE_COST))
+                    {
+                        weapon.offense += 20;
+                        weapon.hit_chance +=5;
+                        upgrades[0] += 1;
+                    }
+                    else
+                    {
+                        return ("du hast nicht genug  gold");
+                        
+                    }
+                    break;
+                case "Armor":
+                    if(changeBank(upgradesItems[1] * BASE_UPGRADE_COST))
+                    {
+                         armor.defense += 20;
+                         armor.dodge_chance += 5;
+                        upgrades[1] += 1;
+                    }
+                    else
+                    {
+                        return ("du hast nicht genug Gold");
+                    
+                    }
+                    break;
+                case "Wand":
+                    if(changeBank(upgradesItems[2] * BASE_UPGRADE_COST))
+                    {
+                        wand.spelldamage += 20;
+                        upgrades[2] += 1;
+                    }
+                    else
+                    {
+                        return ("du hast nicht genug Gold");
+                    }
+                    break;
+                case "Shield":
+                    if(changeBank(upgradesItems[3] * BASE_UPGRADE_COST))
+                    {
+                        shield.shield_defense += 5;
+                        shield.block_chance += 2;
+                        upgrades[3] += 1;
+                    }
+                    else
+                    {
+                        return ("du hast nicht genug Gold");
+                    }
+                    break;
+                default:
+                    // Error Message
+                    // Implement me :)
+                    break;
+                }
         
-    }
-}
+        }
+}}
