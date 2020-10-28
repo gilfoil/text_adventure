@@ -8,13 +8,15 @@ namespace TextAdventure
         {
             string name = "Archibald Douglas";
             Hero hero = new Hero(name);
-            Console.WriteLine($"{hero}");
+            //Console.WriteLine($"{hero}");
             /*hero.takeDamage(35);
             Console.WriteLine($"{hero.getCurrentHealth()}/{hero.getMaxHealth()}");
             hero.healDamage(10);
             Console.WriteLine($"{hero.getCurrentHealth()}/{hero.getMaxHealth()}");
             hero.healDamage(200);
             Console.WriteLine($"{hero.getCurrentHealth()}/{hero.getMaxHealth()}");*/
+            Story s = new Story(hero);
+            
         }
 
         public static int roll(int min, int max)
