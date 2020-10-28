@@ -1,0 +1,115 @@
+Ziel
+
+4 Schriftrollen - 4 Quests erfolgreich abschließen - 
+4 regionen: Erde: Bergwerk (Troll) || Wasser: See (Krake) || Luft: Bergspitze (Harpyie)|| Feuer: Vulkan (Drache)
+
+
+Benötigte Zauber:
+Lumos (Licht an)
+Dianthuskraut (unter Wasser atmen)
+
+-----------------------------------
+Der Troll im Bergwerk
+-----------------------------------
+
+
+1/ Gespräch in Schenke mit Wirt: "Was darfs sein?"
+& "Ein Bier und meine Ruhe!" 
+	#repeat 1
+
+& "Ein Bier und eine Aufgabe, bitte!"
+	//quest1: besiege den Troll
+	# "Wenn du den Troll aus dem Bergwerk verjagst, geht das Bier aufs Haus. Und ich lege noch 10 Taler dazu:"
+	
+//quest annehmen?
+2/ gehe zum Berg 
+& "Ich bleibe lieber hier." #gehe zurück zum Hub
+& "Auf geht's"
+	#Hindernis: Steine versperren den Eingang 
+		& gehe zurück zum Hub #Hub
+		& Kampf gegen Steine: #Encounter Steine
+		  Kampf: (Monster Steine: HP 100 AP: 0)
+
+
+3/ Eingang Bergwerk
+& "Ich habe Angst im dunkeln. Da gehe ich nicht rein!"	#Hub
+& nutze Zauber
+	#Lumos: Licht an 
+		& Gehe nach Hause #Hub
+		& gehe hinein #GoTo 4
+	# anderer Zauber: (keine Wirkung)
+
+
+4/ in Bergwerk mit Lumos: Begegnung mit Monster: Troll
+& Weglaufen
+	#gehe zurück zum Eingang Bergwerk (Licht an)
+& Kampf
+	#Kampf gegen Troll (Monster Troll HP:100 AP:10)
+		& Fail #Hub
+		& Sieg #coins + 10 + (Held findet Kiste in Bergwerk)
+
+Held öffnet Kiste darin befindet sich eine alte Schriftrolle "... mystischer Text über 4 alte Schriften, die zusammen einen
+Weg zu einem verschollnenen Schatz weisen....."
+
+5/ "Möchtest du die restlichen drei Schriftrollen finden und den Schatz bergen?"
+& "Nein, danke" #Hub
+& "Ja, unbedingt." # "Auf geht's" (Tutorial abgeschlossen) gehe zurück zum Hub
+
+----------------------------------
+Die Krake im See
+----------------------------------
+
+6/ Gespräch mit Heiler: "Wie kann ich helfen?"
+& heilen kostet coins
+& "Die Monsterkrake im See, frisst alle jungen Heilkräuter. Wenn es nicht getötet wird, gibt es bald keine Heiltränke mehr. :("
+	& "Hmm, das ist ja blöd. Da müsste mal jemand was tun."
+		#Hub
+	& "Für 15 Taler, erledige ich das Monster für dich!"
+		#GoTo 7
+
+7/ Du gehst über eine Wiese. Am Seeufer wachsen wilde Kräuter.
+& keine Käuter essen 
+& Kräuter essen #Kiemen
+
+8/ Möchtest du die Krake jagen?
+& "Nein, ich kann nicht schwimmen!" #Hub
+& "Heute Abend gibt's Calamari!" #GoTo 9
+
+9/ Im Wasser bewegt sich etwas!
+& "IIiiieeehhh etwas ist an meinem Bein!" #Hub
+& Da! Ein Tentakel #Encounter: Krake
+		& Fail #Hub
+		& Sieg #GoTo 10 + coins+15
+
+10/ Die Krake bewacht eine Truhe
+	& lass Truhe im See liegen #Seeufer
+	& öffne Truhe #2. Schriftrolle + #Seeufer
+
+-------------------------------------
+Das Nest der Harpyie
+-------------------------------------
+
+11/ Gespräch mit Verzauberer.
+&   
+&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

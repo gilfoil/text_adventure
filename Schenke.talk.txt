@@ -1,0 +1,73 @@
+1/ Eintritt in die Schenke.
+
+	& Wer bist du ? #Goto /2
+	& Hallo Schenker, ein Bier bitte. (2 Gold) #Goto 3
+
+2/ Wer ich bin ? Ich steh hinter der Theke, putze die Gläser und starre Löcher in meine Gäste. Ich bin der Bestatter.
+
+	& Ok, ich verstehe, dumme frage. #Goto 4
+
+3/ Gerne, das sind dann 2 Gold ... hier bitte.  	
+	& Danke. Was kannst du mir sagen über die gegend hier ?
+
+4/ Kann man wohl sagen. Was kann ich für dich tun ?
+
+	& Ich bin neu hier und weiß noch nicht so viel über diese Gegend. Kannst du mir einwenig über diese gegend erzählen ? #Goto 5
+
+5/ Für den richtigen Preis kann ich dir eine ganze menge erzählen.
+	
+	& Was kannst du mir sagen das kein Gold kostet ? #Goto 6
+	& Was soll mich das kosten ? #Goto 7
+
+6/ Die Latrienen findest du in der Stadtmauer im Norden und am Hafen im Süden. 
+
+	& Hmmm das ist ja nicht so viel. #Goto 8
+
+7/ 1 Gold pro Information
+	
+	& Was kannst du mir sagen zum Gebirge ? #Goto 9
+	& Was kannst du mir sagen zu der See ? #Goto 10
+
+8/ Nur der Tod ist billiger.
+	
+	& Was kostet mich den ein Gute Information ? #Goto 7
+
+9/ Das Gebirge liegt im Norden und ist die einzige Barriere zwischen uns und dem rest des Landes. Aber pass auf und nimm dich in acht vor der Mine, solltest du von den Wegen abkommen.
+
+	& Was kannst du mir sagen zu der Mine ? #Goto 10
+	& Was ist so gefährlich daran den Weg zu verlassen ? #Goto 11
+	& Warum ist die Mine verlassen ? #Goto 12
+
+10/ Die Mine ist irgendwo versteckt am ende einer der verlassenenen Bergwege.
+
+	& zurück #Goto 8
+	& Was für Kreaturen auserhalb der Wege sind denn Gefährlich ? #Goto 13
+	
+11/ Wenn du die Wege verlässt kommst du zu Orten wie der Mine, dem Gipfel oder dem Vulkan. 
+
+	& Was kannst du mir über den Gipfel erzählen ? #Goto 15
+	& Was kannst du mir über den Vulkan ezählen ? #Goto 16
+	& zurück #Goto 8
+	& Was für Kreaturen auserhalb der Wege sind denn Gefährlich ? #Goto 13
+
+12/ Vor einigen Jahren hat sicht dort ein Troll niedergelassen und keiner konnte ihn bisher vertreiben oder besiegen.
+
+	& zurück #Goto 8
+	& Was für Kreaturen auserhalb der Wege sind denn Gefährlich ? #Goto 13
+
+13/ Es gibt einige Wölfe, Adler usw. in den Bergen aber nichts was dir wirklich gefählich werden könnte solange du auf den Wegen bleibst.
+	
+	& Was für Kreaturen sind denn gefährlicher als die Wölfe und Adler ? #Goto 14 
+
+14/ Der Troll, die Harpyien und der Drache aber nur wenn du ihnen zu nahe kommst.
+
+	& Kann man sich and den Viechern vorbeistehlen ? #Goto 17
+
+15/ Gehe lieber nicht zum Gipfel dort sollen sich einige Harpyien niedergelassen haben.
+
+	&
+
+16/ Der Vulkan befindet sich Östlich des Westweges. Aber gehe dort nicht hin denn dort liegt ein schlafender Drache in einen der heißen Lavaröhren und bewaht sein Nest und sein Gold.
+
+
+17/ Du kannst es gerne versuchen aber 
