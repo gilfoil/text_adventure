@@ -19,6 +19,9 @@ namespace TextAdventure
             Console.WriteLine($"{hero.getCurrentHealth()}/{hero.getMaxHealth()}");
             hero.healDamage(200);
             Console.WriteLine($"{hero.getCurrentHealth()}/{hero.getMaxHealth()}");*/
+            Story s = new Story(hero);
+            //s.start();
+            
         }
 
          

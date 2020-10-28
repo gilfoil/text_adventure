@@ -1,0 +1,10 @@
+1/ Dies ist eine Testquest! :)
+mit Text über mehreren Zeilen.
+& Testen ! #Encounter
+& Weg hier ! #Goto 2
+& Ab nach Hause ! #Hub
+
+2/ Dies ist noch eine Testquest! :D
+& Nochmal Testen! #Goto 1
+& Meh... #Encounter
+& Ab nach Hause ! #Hub
