@@ -143,7 +143,7 @@ namespace TextAdventure
                     {
                         this.intelligence += 1;
                         upgrades[2] += 1;
-                        upgradesItem[2] += 1;
+                        
                     }
                     else
                     {
