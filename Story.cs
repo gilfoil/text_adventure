@@ -11,12 +11,19 @@ namespace TextAdventure
         public const char OPTION_DELIM = '&';
 
         public const char CONSEQUENCE_DELIM = '#';
+
+        public const int QID_TAVERN = 2;
+        public const int QID_HUB = 1;
+        public const int QID_ITEM_SHOP = 3;
+        public const int QID_ATTR_SHOP = 4;
+        public const int QID_ENCHANT_SHOP = 5;
         private int currentDay;
 
         private int currentQuest = 1;
 
         private bool isComplete;
 
+        private string area = "Hub";
 
         private Hero hero;
 
@@ -71,6 +78,15 @@ namespace TextAdventure
                     this.consequence = consequence;
                 }
 
+                public Option(string text, string consequence, 
+                                int param, int nextQuest)
+                {
+                    this.text = text;
+                    this.consequence = consequence;
+                    this.param = param;
+                    this.nextQuest = nextQuest;
+                }
+
                 public override string ToString()
                 {
                     return $"{this.text} -> {this.consequence} ({this.param})";
@@ -95,23 +111,29 @@ namespace TextAdventure
         {
             this.hero = hero;
             this.quests = new Dictionary<int, Quest>();
+            setupHubQuest();
             loadFromFile("test.txt");
             Console.WriteLine($"Loaded Quests: {this.quests.Count}");
-            /*if(this.quests.Count > 0)
-            {
-                runQuest(this.quests[0]);
-            }
-            else
-            {
-                Console.WriteLine("Failed to load quests :(");
-            }*/
-            //runQuest(this.quests[this.currentQuest]);
-            /*foreach (var quest in this.quests)
-            {
-                Console.WriteLine(quest);
-            }*/
         }
 
+        private void setupHubQuest()
+        {
+            string hubText = @"You arrive in the 
+            center of the small town. At every corner there 
+            is something to see or someone trying to sell you 
+            something. Where do you want to go?";
+            Option tavern = new Option("To the tavern!", 
+            "Goto", QID_TAVERN, 0);
+            Option itemShop = new Option("To the Item Shop!", 
+            "Goto", QID_ITEM_SHOP, 0);
+            Option enchantShop = new Option("To the Enchantment Shop!", 
+            "Goto", QID_ENCHANT_SHOP, 0);
+            Option attrShop = new Option("To the Skill Trainer!", 
+            "Goto", QID_ATTR_SHOP, 0);
+            List<Option> hubOptions = new List<Option>() {tavern, itemShop, enchantShop, attrShop};
+            Quest hubQuest = new Quest(hubText, hubOptions);
+            this.quests.Add(QID_HUB, hubQuest);
+        }
         private void addQuestAt(Quest quest, int id)
         {
             this.quests[id] = quest;
@@ -175,6 +197,11 @@ namespace TextAdventure
                                         parsedOption = new Option(optionText, consequence);
                                         int val = Convert.ToInt32(param[1]);
                                         parsedOption.setParam(val);
+                                        if(param.Length == 3)
+                                        {
+                                            int next = Convert.ToInt32(param[2]);
+                                            parsedOption.setNextQuest(next);
+                                        }
                                     }
                                     else
                                     {
@@ -224,16 +251,21 @@ namespace TextAdventure
             {
                 case "Goto":
                     currentQuest = option.getParam();
-                    runQuest(this.quests[option.getParam()]);
+                    runQuest(this.quests[currentQuest]);
                     break;
                 case "Encounter":
-                    //NYI
+                    Enemy enemy = new Enemy("test");
+                    Fight fight = new Fight(this.hero, enemy);
+                    runQuest(this.quests[option.getParam()]);
                     break;
                 case "Hub":
-                    //NYI
+                    //player can go back to hub for stuff
+                    //player can resume quest after using hub
+                    runQuest(this.quests[QID_HUB]);
                     break;
                 case "Coins":
                     this.hero.changeBank(option.getParam());
+                    runQuest(this.quests[option.getNextQuest()]);
                     break;
                 default:
                     //NYI

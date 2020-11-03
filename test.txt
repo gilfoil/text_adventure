@@ -1,15 +1,15 @@
-1/ Dies ist eine Testquest! :)
+101/ Dies ist eine Testquest! :)
 mit Text über mehreren Zeilen.
-& Testen ! #Encounter
-& Weg hier ! #Goto 2
+& Testen ! #Encounter 102
+& Weg hier ! #Goto 102
 & Ab nach Hause ! #Hub
 
-2/ Dies ist noch eine Testquest! :D
-& Nochmal Testen! #Goto 3
-& Meh... #Encounter
+102/ Dies ist noch eine Testquest! :D
+& Nochmal Testen! #Goto 103
+& Meh... #Encounter 103
 & Ab nach Hause ! #Hub
 
-3/ Dies ist ein Coins Test !
-& Gib mir Kekse! #Coins 10 1
-& Nicht meine Kekse! #Coins -10 2
-& Zurück #Goto 1
+103/ Dies ist ein Coins Test !
+& Gib mir Kekse! #Coins 10 101
+& Nicht meine Kekse! #Coins -100 102
+& Zurück #Goto 101
