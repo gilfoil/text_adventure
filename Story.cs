@@ -13,7 +13,7 @@ namespace TextAdventure
         public const char CONSEQUENCE_DELIM = '#';
         private int currentDay;
 
-        private int currentQuest = 0;
+        private int currentQuest = 1;
 
         private bool isComplete;
 
@@ -63,6 +63,8 @@ namespace TextAdventure
 
                 private int param = 0;
 
+                private int nextQuest = 0;
+
                 public Option(string text, string consequence)
                 {
                     this.text = text;
@@ -80,6 +82,12 @@ namespace TextAdventure
                 }
 
                 public int getParam() => this.param;
+
+                public void setNextQuest(int nextQuest)
+                {
+                    this.nextQuest = nextQuest;
+                }
+                public int getNextQuest() => this.nextQuest;
 
                 public string getConsequence() => this.consequence;
             }
@@ -109,7 +117,7 @@ namespace TextAdventure
             this.quests[id] = quest;
         }
 
-        private async Task<bool> loadFromFile(string fPath)
+        private bool loadFromFile(string fPath)
         {
             try
             {
@@ -206,7 +214,7 @@ namespace TextAdventure
 
             }*/
             Console.WriteLine(q);
-            var input = Console.ReadKey();
+            var input = Console.ReadLine();
             resolveChoice(q.getChoosen(Convert.ToInt32(input.ToString())));
         }
 
@@ -215,8 +223,8 @@ namespace TextAdventure
             switch(option.getConsequence())
             {
                 case "Goto":
-                    currentQuest = option.getParam() - 1;
-                    runQuest(this.quests[option.getParam() - 1]);
+                    currentQuest = option.getParam();
+                    runQuest(this.quests[option.getParam()]);
                     break;
                 case "Encounter":
                     //NYI
@@ -225,7 +233,7 @@ namespace TextAdventure
                     //NYI
                     break;
                 case "Coins":
-                    //NYI
+                    this.hero.changeBank(option.getParam());
                     break;
                 default:
                     //NYI
@@ -237,5 +245,6 @@ namespace TextAdventure
         {
             runQuest(this.quests[this.currentQuest]);
         }
+
     }
 }

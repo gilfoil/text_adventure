@@ -33,7 +33,7 @@ namespace TextAdventure
             setMaxHealth();
             this.currentHealth = this.maxHealth;
             this.upgrades = new int[] {1,1,1,1};
-            this.upgradesItems = new int[] {1,1,1,};
+            this.upgradesItems = new int[] {1,1,1,1};
        }
 
         public void rollStats()
@@ -92,7 +92,7 @@ namespace TextAdventure
             }
         }
 
-        public int getCoints() => this.coins;
+        public int getCoins() => this.coins;
 
         public bool changeBank(int coins)
         {
@@ -143,7 +143,7 @@ namespace TextAdventure
                     {
                         this.intelligence += 1;
                         upgrades[2] += 1;
-                        upgradesItem[2] += 1;
+                        upgradesItems[2] += 1;
                     }
                     else
                     {
@@ -231,4 +231,5 @@ namespace TextAdventure
                 }
         
         }
-}}
+    }
+}

@@ -5,6 +5,11 @@ mit Text über mehreren Zeilen.
 & Ab nach Hause ! #Hub
 
 2/ Dies ist noch eine Testquest! :D
-& Nochmal Testen! #Goto 1
+& Nochmal Testen! #Goto 3
 & Meh... #Encounter
 & Ab nach Hause ! #Hub
+
+3/ Dies ist ein Coins Test !
+& Gib mir Kekse! #Coins 10 1
+& Nicht meine Kekse! #Coins -10 2
+& Zurück #Goto 1
