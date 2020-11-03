@@ -11,12 +11,7 @@ namespace TextAdventure
         public const char OPTION_DELIM = '&';
 
         public const char CONSEQUENCE_DELIM = '#';
-
-        public const int QID_TAVERN = 2;
         public const int QID_HUB = 1;
-        public const int QID_ITEM_SHOP = 3;
-        public const int QID_ATTR_SHOP = 4;
-        public const int QID_ENCHANT_SHOP = 5;
         private int currentDay;
 
         private int currentQuest = 1;
@@ -111,12 +106,14 @@ namespace TextAdventure
         {
             this.hero = hero;
             this.quests = new Dictionary<int, Quest>();
-            setupHubQuest();
+            //setupHubQuest();
+            //setupItemShop();
+            loadFromFile("town.txt");
             loadFromFile("test.txt");
             Console.WriteLine($"Loaded Quests: {this.quests.Count}");
         }
 
-        private void setupHubQuest()
+        /*private void setupHubQuest()
         {
             string hubText = @"You arrive in the 
             center of the small town. At every corner there 
@@ -130,9 +127,34 @@ namespace TextAdventure
             "Goto", QID_ENCHANT_SHOP, 0);
             Option attrShop = new Option("To the Skill Trainer!", 
             "Goto", QID_ATTR_SHOP, 0);
+            Option backToQuest = new Option("Go Back!", "Goto", this.currentQuest, 0);
             List<Option> hubOptions = new List<Option>() {tavern, itemShop, enchantShop, attrShop};
             Quest hubQuest = new Quest(hubText, hubOptions);
             this.quests.Add(QID_HUB, hubQuest);
+        }
+
+        private void setupItemShop()
+        {
+            //Buy
+            //Upgrade
+            string itemShopText = @"You arrive in a worn 
+            down storage room, as your eyes are getting 
+            used to the light you notice a small figure 
+            in the corner gesturing in your direction to 
+            come closer and look at the goods.";
+            Option buySword = new Option("Buy Sword", "Buy", 125, QID_ITEM_SHOP);
+            Option buyArmor = new Option("Buy Armor", "Buy", 500, QID_ITEM_SHOP);
+            Option buyWand = new Option("Buy Magic Wand", "Buy", 1500, QID_ITEM_SHOP);
+            Option buyShield = new Option("Buy Shield", "Buy", 200, QID_ITEM_SHOP);
+            Option back = new Option("Back to the Hub", "Hub", 0, 0);
+            this.quests.Add(QID_ITEM_SHOP, 
+            new Quest(itemShopText, new List<Option>()
+            {buySword, buyArmor, buyWand, buyShield}));
+        }*/
+
+        private void setupSkillTrainer()
+        {
+
         }
         private void addQuestAt(Quest quest, int id)
         {

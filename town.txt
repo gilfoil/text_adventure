@@ -1,0 +1,8 @@
+1/ You arrive in the 
+center of the small town. At every corner there 
+is something to see or someone trying to sell you 
+something. Where do you want to go?
+& To the tavern! #Goto 2
+& To the Item Shop! #Goto 3
+& To the Enchantment Shop! #Goto 5
+& To the Skill Trainer! #Goto 4
