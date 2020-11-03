@@ -6,3 +6,14 @@ something. Where do you want to go?
 & To the Item Shop! #Goto 3
 & To the Enchantment Shop! #Goto 5
 & To the Skill Trainer! #Goto 4
+
+3/ You arrive in a worn 
+down storage room, as your eyes are getting 
+used to the light you notice a small figure 
+in the corner gesturing in your direction to 
+come closer and look at the goods.
+& Buy Sword #Buy 125 3
+& Buy Armor #Buy 500 3
+& Buy Wand #Buy 1500 3
+& Buy Shield #Buy 200 3
+& Back to the Hub #Hub

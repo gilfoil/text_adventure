@@ -230,5 +230,33 @@ namespace TextAdventure
                 }
         
         }
+    
+        public void setWeapon(Item.Weapon weapon)
+        {
+            this.weapon = weapon;
+        }
+
+        public Item.Weapon GetWeapon() => this.weapon;
+
+        public void setArmor(Item.Armor armor)
+        {
+            this.armor = armor;
+        }
+
+        public Item.Armor getArmor() => this.armor;
+
+        public void setWand(Item.Wand wand)
+        {
+            this.wand = wand;
+        }
+
+        public Item.Wand getWand() => this.wand;
+
+        public void setShield(Item.Shield shield)
+        {
+            this.shield = shield;
+        }
+
+        public Item.Shield getShield() => this.shield;
     }
 }

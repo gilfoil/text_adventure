@@ -109,6 +109,8 @@ namespace TextAdventure
             //setupHubQuest();
             //setupItemShop();
             loadFromFile("town.txt");
+            this.quests[QID_HUB].addOption(
+                new Option("Go Back!", "Goto", currentQuest, 0));
             loadFromFile("test.txt");
             Console.WriteLine($"Loaded Quests: {this.quests.Count}");
         }
@@ -287,6 +289,33 @@ namespace TextAdventure
                     break;
                 case "Coins":
                     this.hero.changeBank(option.getParam());
+                    runQuest(this.quests[option.getNextQuest()]);
+                    break;
+                case "Buy":
+                    if(this.hero.changeBank(option.getParam()))
+                    {
+                        switch(option.getParam())
+                        {
+                            case 125:
+                                this.hero.setWeapon(new Item.Weapon());
+                                break;
+                            case 200:
+                                this.hero.setShield(new Item.Shield());
+                                break;
+                            case 500:
+                                this.hero.setArmor(new Item.Armor());
+                                break;
+                            case 1500:
+                                this.hero.setWand(new Item.Wand());
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("You're broke, dude...");
+                    }
                     runQuest(this.quests[option.getNextQuest()]);
                     break;
                 default:
